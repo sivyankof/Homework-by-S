@@ -1,0 +1,26 @@
+let num = 1;
+let bigint = 121321n;
+let boolean = 1<2;
+let str = `строчка`;
+let smbl = Symbol (`id`);
+let obj =  {};
+let nl = null;
+let fn = Function (1);
+let undef = undefined;
+
+console.log (num);
+alert (num);
+console.log (bigint);
+alert (bigint);
+console.log (str);
+alert (str);
+console.log (smbl);
+alert (smbl);
+console.log (obj);
+alert (obj);
+console.log (nl);
+alert (nl);
+console.log (fn);
+alert (fn);
+console.log (undef);
+alert (undef);
