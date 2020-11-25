@@ -5,13 +5,12 @@ var users = [
 ];
 users.push({ id: 4, name: "Дима", age: 17 });
 users.reverse();
-for (i in users) {
-  if (users[i].name == `Петя`) {
-    console.log(users[i].name); // выведит users по имени Петя
-  }
-}
+
+let user = users.find((item) => item.name == `Петя`);
+console.log(user.age);
+
+
 
 let sums = users.reduce((sum, current) => sum + current.age, 0); //  выводит сумму всех age = 74
 
 console.log(sums);
-FfFf;

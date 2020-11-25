@@ -4,29 +4,9 @@
 // Из полученного массива извлечь последний элемент. Извлеченный элемент добавить вначало массива.
 
 var arr = [1, 10, 25, 67, 87, 56];
+arr.push(4);
+var leng = arr.length
+var fourItem= arr.pop()
+arr.unshift(fourItem)  //выводит arr [4, 1, 10, 25, 67, 87, 56]
 
-var leng = arr.concat();
-leng.push(4);
-leng.pop(4);
-leng.unshift(4);
 
-// console.log (arr)
-// console.log (leng)
-
-//Task two
-
-//Дан массив var arr1 = [2, 5, 90, 4]. Обьеденить данный массив с массивом из предыдущего задания (с учетом тех изменений, которые вы с ним уже произвели в том задании )
-// и записать результат в переменную arr2. Сами массивы arr и arr1 должны остаться неизмененными.
-var arr1 = [2, 5, 90, 4];
-arr2 = arr1.concat(leng);
-let sum = 0;
-let i = 0;
-for (let i in arr2) {
-  if (i == 90) {
-    arr2.splice(i, 1, 19, 2, 91);
-  }
-  return;
-}
-
-console.log(arr2, `arr2`);
-console.log(arr1, `arr1`);
