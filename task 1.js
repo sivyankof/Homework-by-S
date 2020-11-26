@@ -5,8 +5,6 @@
 
 var arr = [1, 10, 25, 67, 87, 56];
 arr.push(4);
-var leng = arr.length
-var fourItem= arr.pop()
-arr.unshift(fourItem)  //выводит arr [4, 1, 10, 25, 67, 87, 56]
-
-
+var leng = arr.length;
+var fourItem = arr.pop();
+arr.unshift(fourItem); //выводит arr [4, 1, 10, 25, 67, 87, 56]
