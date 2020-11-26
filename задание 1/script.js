@@ -5,12 +5,12 @@
 //    return x
 // }
 
-function f() {
+function enterNumber() {
    return (arguments.length >= 1 ? 1 : 0)
 }
 
-console.log (f(undefined));  
-console.log (f(0));
-console.log (f(2));
+console.log (enterNumber(undefined));  
+console.log (enterNumber(0));
+console.log (enterNumber(2));
 
-  
+//Проверка на введение числа, если есть число, выводит 1, если нет числа то 0  

@@ -1,4 +1,4 @@
-// function sum(a, b) { 
+// function sum(a, b) {
 //   let sums = 0;
 //   for (var i = 0; i < arguments.length; i++) {
 //     sums += arguments[i];
@@ -7,12 +7,12 @@
 //   return sums
 // };
 
-function sum(a, b) { 
+function sum(a, b) {
   let sums = 0;
   for (let i in arguments) {
     sums += arguments[i];
   }
-  return sums
-};
+  return sums;
+}
 
-console.log (sum(2,3,4,11,12));
+console.log(sum(2, 3, 4, 11, 12));
