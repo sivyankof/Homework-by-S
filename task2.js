@@ -20,11 +20,16 @@ var users = [
 let usersAfterYear = users.concat();
 
 let fun = (obj) => {
-  usersAfterYear.map((item) => item.age + 1);
-  return (usersAfterYear = usersAfterYear.filter((item) => item.age >= 18));
-};
+  const arrayOfAges = obj
+    .map((item) => {
+      item.age = item.age + 1;
+      return item;
+    })
+    .filter((item) => item.age >= 18);
 
-fun(users);
+  return arrayOfAges;
+};
+console.log(fun(usersAfterYear));
 
 // На основании массива usersAfterYear, полученного на основании предыдущего задания создать новый массив
 // usersAfterYearUniqueAge, в котором нет пользователей с одинаковым возрастом. Если у вас есть два пользователя ({id:
@@ -39,6 +44,9 @@ fun(users);
 //                   {id: 12, name: "Денис", age: 20}
 //                   {id: 4, name: "Света", age: 18}];
 
-let usersAfterYearUniqueAge = Object.values(usersAfterYear.reduce((acc, el) => {acc[el.age] = el;return acc;
+let usersAfterYearUniqueAge = Object.values(
+  usersAfterYear.reduce((acc, el) => {
+    acc[el.age] = el;
+    return acc;
   }, {})
 );
