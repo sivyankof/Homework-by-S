@@ -27,18 +27,40 @@ console.log(firstElement, secondElement, fifthElement, otherElements);
 // (например 5.12.2020). Расширить задание таким образом чтобы если день месяца есть число меньше 10 перед ней
 // ставился "0" (например 05.12.2020);
 
-let today = new Date(2020, 3, 4);
+let today = new Date();
 function nowDate(obj) {
-    obj =
-        `${obj.getDate()}` +
-        `.` +
-        `${obj.getMonth()}` +
-        `.` +
-        `${obj.getFullYear()}`;
+    // функция для даты
+
+    obj = obj.getDate();
+    {
+        obj = obj.toString();
+        if (obj[0] != 0 && obj.length == 1) {
+            obj = `0` + obj;
+        }
+    }
     return obj;
 }
-today = nowDate(today); // 4.3.2020
-console.log(today);
+function nowMonth(obj) {
+    // функция для месяца
+
+    obj = obj.getMonth();
+    {
+        obj = obj.toString();
+        if (obj[0] != 0 && obj.length == 1) {
+            obj = `0` + obj;
+        }
+    }
+    return obj;
+}
+function nowYear(obj) {
+    // функция года
+
+    obj = obj.getFullYear();
+    return obj;
+}
+
+let presentDay = nowDate(today) + `.` + nowMonth(today) + `.` + nowYear(today);
+console.log(presentDay);
 
 // - Дан объект let user = {
 //     name: "Ivan",
