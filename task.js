@@ -26,3 +26,15 @@ console.log(firstElement, secondElement, fifthElement, otherElements);
 // Используя объект Date представьте текущую дату на момент выполения задания в формате DD.MM.YYYYY
 // (например 5.12.2020). Расширить задание таким образом чтобы если день месяца есть число меньше 10 перед ней
 // ставился "0" (например 05.12.2020);
+
+let today = new Date(2020, 3, 4);
+function nowDate(obj) {
+    obj =
+        `${obj.getDate()}` +
+        `.` +
+        `${obj.getMonth()}` +
+        `.` +
+        `${obj.getFullYear()}`;
+    return obj;
+}
+console.log(nowDate(today));
