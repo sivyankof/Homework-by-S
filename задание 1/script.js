@@ -6,11 +6,11 @@
 // }
 
 function enterNumber() {
-   return (arguments.length >= 1 ? 1 : 0)
+    return arguments.length >= 1 ? 1 : 0;
 }
 
-console.log (enterNumber(undefined));  
-console.log (enterNumber(0));
-console.log (enterNumber(2));
+console.log(enterNumber(undefined));
+console.log(enterNumber(0));
+console.log(enterNumber(2));
 
-//Проверка на введение числа, если есть число, выводит 1, если нет числа то 0  
+//Проверка на введение числа, если есть число, выводит 1, если нет числа то 0
