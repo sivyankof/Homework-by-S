@@ -37,4 +37,18 @@ function nowDate(obj) {
         `${obj.getFullYear()}`;
     return obj;
 }
-console.log(nowDate(today));
+today = nowDate(today); // 4.3.2020
+console.log(today);
+
+// - Дан объект let user = {
+//     name: "Ivan",
+//     age: 19
+//    };
+// Создайте копию объекта использую сериализацию и десериализацию (JSON.stringify(), JSON.parse());
+
+let user1 = {
+    name: "Ivan",
+    age: 19,
+};
+
+let copyUser = JSON.parse(JSON.stringify(user1));
