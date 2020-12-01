@@ -29,7 +29,6 @@ console.log(firstElement, secondElement, fifthElement, otherElements);
 
 let today = new Date();
 function nowDate(obj) {
-
     obj = obj.getDate();
     {
         obj = obj.toString();
@@ -40,7 +39,6 @@ function nowDate(obj) {
     return obj;
 }
 function nowMonth(obj) {
-
     obj = obj.getMonth();
     {
         obj = obj.toString();
@@ -51,7 +49,6 @@ function nowMonth(obj) {
     return obj;
 }
 function nowYear(obj) {
-
     obj = obj.getFullYear();
     return obj;
 }
@@ -59,7 +56,7 @@ function nowYear(obj) {
 let presentDay = nowDate(today) + `.` + nowMonth(today) + `.` + nowYear(today);
 console.log(presentDay);
 
-// одно из решений 
+// одно из решений
 // let today = new Date();
 
 // function format(obj) {
@@ -79,11 +76,6 @@ console.log(presentDay);
 // }
 
 // console.log(format(today));
-
-
-
-
-
 
 // - Дан объект let user = {
 //     name: "Ivan",
