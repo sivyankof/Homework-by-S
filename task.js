@@ -56,26 +56,27 @@ function nowYear(obj) {
 let presentDay = nowDate(today) + `.` + nowMonth(today) + `.` + nowYear(today);
 console.log(presentDay);
 
-// одно из решений
-// let today = new Date();
+// одно из решений задачи по
+let today = new Date();
 
-// function format(obj) {
-//     let day = fill(obj.getDate());
-//     let month = fill(obj.getMonth());
-//     let year = obj.getFullYear();
+function format(obj) {
+    let day = fill(obj.getDate());
+    let month = fill(obj.getMonth());
+    let year = obj.getFullYear();
 
-//     return day + "." + month + "." + year;
+    return day + "." + month + "." + year;
 
-//     function fill(number) {
-//         number = String(number);
-//         if (number[0] != 0 && number.length == 1) {
-//             number = 0 + number;
-//         }
-//         return number;
-//     }
-// }
+    function fill(number) {
+        number = String(number);
+        if (number[0] != 0 && number.length == 1) {
+            number = 0 + number;
+        }
+        return number;
+    }
+}
 
-// console.log(format(today));
+console.log(format(today));
+
 
 // - Дан объект let user = {
 //     name: "Ivan",
