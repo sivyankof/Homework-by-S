@@ -21,7 +21,7 @@ console.log(userName, userYears, userCar, userOtherInfo);
 let arr = [1, "str", 24, { name: "Ivan" }, 89, undefined, "10"];
 let [firstElement, secondElement, , fifthElement, ...otherElements] = arr;
 
-console.log(firstElement, secondElement, fifthElement, otherElements);
+console.log(firstElement, secondElement,fifthElement, otherElements);
 
 // Используя объект Date представьте текущую дату на момент выполения задания в формате DD.MM.YYYYY
 // (например 5.12.2020). Расширить задание таким образом чтобы если день месяца есть число меньше 10 перед ней
@@ -76,7 +76,6 @@ function format(obj) {
 }
 
 console.log(format(today));
-
 
 // - Дан объект let user = {
 //     name: "Ivan",
