@@ -47,3 +47,21 @@ let startSpam = setTimeout(function startTimer() {
         }
     }
 }, 5000);
+
+//_______________________________________
+let user = { name: `Alesha` };
+user[user.name] = user;
+
+function inf(obj) {
+    let count = 0;
+    for (let key in obj) {
+        if (obj[key] == obj[key]) {
+            count += 1;
+            inf(obj);
+        } else {
+            return count;
+        }
+    }
+    return count;
+}
+inf(user);
