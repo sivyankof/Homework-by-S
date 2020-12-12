@@ -1,40 +1,59 @@
-/* Используйте метод reduce в комбинации с concat для свёртки массива массивов в один массив, у которого 
-есть все элементы входных массивов.
-Например:
-*/
-let arrays = [[1, 2, 3], [4, 5], [6]];
+// Создайте функцию-конструктор houseBuilder, которая позволяет создавать объект дачного дома с параметрами ширины
+// длины и количества этажей.Создайте два объекта firstHouse и secondHouse на основании этой функции конструктора. (Длина,
+// ширина, количество этажей - числовой тип данных, значения придумайте сами).
 
-let arr = arrays.reduce((acc, el) => acc.concat(el));
+function HouseBuilder(width, heigth, floor) {
+    (this.width = width), (this.heigth = heigth), (this.floor = floor);
+}
 
-//или
+let firstHouse = new HouseBuilder(2, 4, 3);
+let secondHouse = new HouseBuilder(30, 60, 2);
 
-let arr1 = arrays.reduce((acc, el) => [...acc, ...el]);
+// - Создайте метод calcArea который будет возвращать суммарную площадь всех этажей дома. Данный метод занести в
+// прототип конструктора. Вызвать данный метод на каждом созданном объекте и результат записать в поле totalArea
+// каждого объекта.
 
-/* Создайте функцию-конструктор, которая позволяет создавать объект пользователя с полями first_name, second_name, age, 
-city. С помощью данной функции создайте два объекта пользователей (два пользователя), имя, фамилию, возраст, город 
-проживания задайтесами. */
-
-function User(first_name, second_name, age, city) {
-    this.first_name = first_name,
-    this.second_name = second_name,
-    this.age = age,
-    this.city = city
+HouseBuilder.prototype.calcArea = function () {
+    return this.width * this.heigth * this.floor;
 };
 
-let user1 = new User(`Andrey`, `Ivanov`, 21, `Gomel`);
+firstHouse.totalArea = firstHouse.calcArea();
+secondHouse.totalArea = secondHouse.calcArea();
 
-/* Создайте функцию, которая позовляет вывести полную информацию о каждом из двух пользователей созданных в предыдущем 
-задании.Функция должна выполнять вывод информации и не принимать аргументов. По сути нужно одну функцию привязать 
-два объекта.*/
-function User(first_name, second_name, age, city) {
-    this.first_name = first_name,
-    this.second_name = second_name,
-    this.age = age,
-    this.city = city,
+// - Данна функция function askArea(result, resolve, reject) {
+//   				let area = result();
+//   				if area >= "120") resolve();
+//   				else reject();
+// 			}
+// Добавьте в прототип конструктора houseBuilder метод для проверки того что выполнен план по площади checkAreaSuccessfully
+// ,которая выполняет alert("План по стройке выполнен"). Добавьте также метод для проверки того что не выполнен план по
+// площади checkAreaFail, которая выполняет alert("План по стройке не выполнен выполнен"). Попробуйте вызвать:
 
-    function sayHi(){
-        alert(`Привет, меня звать ${this.first_name} ${this.second_name}, мне ${this.age} я живу в ${this.city}`);
-    }
+// 		askArea(firstHouse.calcArea, firstHouse.checkAreaSuccessfully, firstHouse.checkAreaFail)
+// 		askArea(secondHouse.calcArea, secondHouse.checkAreaSuccessfully, secondHouse.checkAreaFail)
+
+// Будет ли такой код работать корректно? Если нет то используйте известные вам механизмы привязки чтобы решить эту
+// задачу.
+
+function askArea(result, resolve, reject) {
+    let area = result();
+    if (area >= "120") resolve();
+    else reject();
+}
+HouseBuilder.prototype.checkAreaSuccessfully = function () {
+    alert("План по стройке выполнен");
+};
+HouseBuilder.prototype.checkAreaFail = function () {
+    alert("План по стройке не выполнен выполнен");
 };
 
-let user2 = new User(`Andrey`, `Ivanov`, 21, `Gomel`);
+askArea(
+    firstHouse.calcArea.bind(firstHouse),
+    firstHouse.checkAreaSuccessfully.bind(firstHouse),
+    firstHouse.checkAreaFail.bind(firstHouse)
+);
+askArea(
+    secondHouse.calcArea.bind(secondHouse),
+    secondHouse.checkAreaSuccessfully.bind(secondHouse),
+    secondHouse.checkAreaFail.bind(secondHouse)
+);
