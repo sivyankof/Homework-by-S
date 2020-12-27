@@ -16,12 +16,13 @@ for (let el in namesOdd) {
 console.log(namesOdd);
 
 let namesEven = document.querySelectorAll(`li:nth-child(even)`);
-for (let el in namesEven) {
-    namesEven[el].style = "color: blue";
+namesEven.forEach((el) => {
+    el.style = "color: blue";
     setInterval(() => {
-        namesEven[el].style.color == "blue"
-            ? (namesEven[el].style = "color: red")
-            : (namesEven[el].style = "color: blue");
+        el.style.color === "blue"
+            ? (el.style.color = "red")
+            : (el.style.color = "blue");
     }, 2000);
-}
-console.log(namesEven);
+});
+
+console.log(namesEven)
