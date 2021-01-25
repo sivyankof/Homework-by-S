@@ -1,18 +1,29 @@
-function cleanRoom(dirtyLevel) {
-    let promise = new Promise(function (resolve, reject) {
-        if ((dirtyLevel < 10) & (dirtyLevel > 1)) {
-            setTimeout(() => resolve(dirtyLevel), dirtyLevel * 1000);
-        } else {
-            return setTimeout(
-                () => reject(new Error()),
-                dirtyLevel * 1000
-            );
-        }
-    }).then(
-        (result) => console.log(`Уборка проведена успешно за ${result} секунд`),
-        (err) => console.log(`Опля, много времени убирать`)
-    );
+function cleanRoom(dirtiLevel) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            if (dirtiLevel <= 10) {
+                resolve(dirtiLevel);
+            } else {
+                reject(`Опля, очень много времени убирать`);
+            }
+        }, dirtiLevel * 1000);
+    });
 }
 
-cleanRoom(2);
-cleanRoom(11);
+function cleanRooms(dirtiLevel_1, dirtiLevel_2, dirtiLevel_3) {
+    cleanRoom(dirtiLevel_1)
+        .then((result) => {
+            console.log(`Уборка проведена успешно за ${result} секунд`);
+            return cleanRoom(dirtiLevel_2);
+        })
+        .then((result) => {
+            console.log(`Уборка проведена успешно за ${result} секунд`);
+            return cleanRoom(dirtiLevel_3);
+        })
+        .then((result) => {
+            console.log(`Уборка проведена успешно за ${result} секунд`);
+        })
+        .catch((err) => console.log(err));
+}
+
+cleanRooms(1, 3, 11);
