@@ -17,17 +17,12 @@ async function cleanRooms(dirtiLevel_1, dirtiLevel_2, dirtiLevel_3) {
         cleanRoom(dirtiLevel_3),
     ])
         .then((resolve) => {
-            console.log(`Уборка проведена успешно за ${dirtiLevel_1} секунд`);
-            return dirtiLevel_2;
-        })
-        .then((resolve) => {
-            console.log(`Уборка проведена успешно за ${dirtiLevel_2} секунд`);
-            return dirtiLevel_3;
-        })
-        .then((resolve) => {
-            console.log(`Уборка проведена успешно за ${dirtiLevel_3} секунд`);
+            console.log(`Уборка проведена успешно за ${resolve[0]} секунд`);
+            console.log(`Уборка проведена успешно за ${resolve[1]} секунд`);
+            console.log(`Уборка проведена успешно за ${resolve[2]} секунд`);
+
         })
         .catch((err) => console.log(err));
 }
 
-cleanRooms(1, 2, 3);
+cleanRooms(1, 2, 11);
